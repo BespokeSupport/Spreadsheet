@@ -181,7 +181,7 @@ class ConverterExampleTest extends TestCase implements ConverterTestInterface
 
         $rows = $sheet->rows();
 
-        $rows->next();
+        ConverterExample::rowsNext($rows);
 
         self::assertTrue(true);
     }

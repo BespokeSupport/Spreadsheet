@@ -128,6 +128,28 @@ class ConverterPhpSpreadsheetTest extends TestCase implements ConverterTestInter
         self::assertTrue(false);
     }
 
+    /**
+     * @expectedException \BespokeSupport\Spreadsheet\Exception\TableLoaderException
+     * @expectedExceptionMessageRegExp "^Unknown type"
+     */
+    public static function testPathToUseTypeBin(): void
+    {
+        $file = __DIR__ . '/../files/fail-binary.bin';
+
+        ConverterPhpSpreadsheet::pathToUseType($file);
+
+        self::assertTrue(false);
+    }
+
+    public static function testPathToUseTypeXls(): void
+    {
+        $file = __DIR__ . '/../files/example.xls';
+
+        $type = ConverterPhpSpreadsheet::pathToUseType($file);
+
+        self::assertEquals('Xls', $type);
+    }
+
     public static function testReadFromLoader(): void
     {
         $path = self::setupPath();

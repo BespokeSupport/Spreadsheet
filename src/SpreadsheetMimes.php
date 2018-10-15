@@ -17,6 +17,7 @@ class SpreadsheetMimes
      * @var array
      */
     public static $available = [
+        SpreadsheetClasses::EXAMPLE => [],
         SpreadsheetClasses::SPOUT => [
             'csv',
             'ods',
