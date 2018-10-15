@@ -83,18 +83,7 @@ class TableRows extends ArrayIterator
             throw new TableReaderException('Native null', 0);
         }
 
-        if (\is_array($this->native)) {
-            next($this->native);
-            return;
-        }
-
-        try {
-            ConvertTableEntities::rowsNext($this);
-            // @codeCoverageIgnoreStart
-        } catch (Exception $e) {
-            throw new TableReaderException('', 0, $e);
-        }
-        // @codeCoverageIgnoreEnd
+        ConvertTableEntities::rowsNext($this);
     }
 
     /**

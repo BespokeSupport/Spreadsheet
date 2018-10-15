@@ -245,7 +245,8 @@ class ConverterSpout extends AbstractConverter implements ConverterInterface
     public static function rowsNext(TableRows $ent)
     {
         try {
-            $ent->native->current();
+            // use of silent operator to exclude LibXML Warnings
+            @$ent->native->next();
             // @codeCoverageIgnoreStart
         } catch (SpoutException $e) {
             throw new TableReaderException('', 0, $e);
