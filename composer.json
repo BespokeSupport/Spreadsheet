@@ -1,0 +1,36 @@
+{
+  "name": "bespoke-support/spreadsheet",
+  "description": "Spreadsheet Wrapper",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Richard Seymour",
+      "email": "web@bespoke.support"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BespokeSupport\\Spreadsheet\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BespokeSupport\\Spreadsheet\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": ["BespokeSupport\\Mime\\FileMimesGenerator::composerGenerate"]
+  },
+  "require": {
+    "bespoke-support/mime": "@stable"
+  },
+  "suggest": {
+    "phpoffice/phpspreadsheet": "@stable",
+    "box/spout": "@stable"
+  },
+  "require-dev": {
+    "phpoffice/phpspreadsheet": "@stable",
+    "box/spout": "@stable"
+  }
+}
