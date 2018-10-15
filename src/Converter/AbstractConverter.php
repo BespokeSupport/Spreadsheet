@@ -24,7 +24,7 @@ abstract class AbstractConverter
     {
         $types = SpreadsheetMimes::$available[$package] ?? null;
 
-        if (!$types) {
+        if ($types === null) {
             return null;
         }
 

@@ -145,4 +145,12 @@ class ConverterExample extends AbstractConverter implements ConverterInterface
     {
         return new TableSheet($ent->native, self::$package);
     }
+
+    /**
+     * @param TableRows $ent
+     */
+    public static function rowsNext(TableRows $ent)
+    {
+        next($ent->native);
+    }
 }

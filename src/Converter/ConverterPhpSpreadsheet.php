@@ -272,4 +272,12 @@ class ConverterPhpSpreadsheet extends AbstractConverter implements ConverterInte
         }
         // @codeCoverageIgnoreEnd
     }
+
+    /**
+     * @param TableRows $ent
+     */
+    public static function rowsNext(TableRows $ent)
+    {
+        $ent->native->next();
+    }
 }

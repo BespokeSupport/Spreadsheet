@@ -238,4 +238,18 @@ class ConverterSpout extends AbstractConverter implements ConverterInterface
         throw new TableReaderException('');
         // @codeCoverageIgnoreEnd
     }
+
+    /**
+     * @param TableRows $ent
+     */
+    public static function rowsNext(TableRows $ent)
+    {
+        try {
+            $ent->native->current();
+            // @codeCoverageIgnoreStart
+        } catch (SpoutException $e) {
+            throw new TableReaderException('', 0, $e);
+        }
+        // @codeCoverageIgnoreEnd
+    }
 }

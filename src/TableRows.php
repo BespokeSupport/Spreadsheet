@@ -89,7 +89,7 @@ class TableRows extends ArrayIterator
         }
 
         try {
-            $this->native->current();
+            ConvertTableEntities::rowsNext($this);
             // @codeCoverageIgnoreStart
         } catch (Exception $e) {
             throw new TableReaderException('', 0, $e);

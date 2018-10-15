@@ -120,6 +120,14 @@ class ConvertTableEntities implements ConverterInterface
     }
 
     /**
+     * @param TableRows $ent
+     */
+    public static function rowsNext(TableRows $ent): void
+    {
+        self::passToConverter($ent->source, __FUNCTION__, \func_get_args());
+    }
+
+    /**
      * @param TableBook $ent
      * @param string $name
      * @return TableSheet|null
